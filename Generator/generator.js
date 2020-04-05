@@ -37,7 +37,7 @@ csv
   .on("end", function () {
     var final = {
       questions: sms,
-      questionsPerPage: 30
+      questionsPerPage: questions.length < 30 ? questions.length : 30
     }
     var json = JSON.stringify(final);
     var script = `const database = ${json};`
