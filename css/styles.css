@@ -1,0 +1,37 @@
+footer, header{
+    background-color: #042956;
+    padding: 14px;
+    color: #fff;
+}
+
+.radio.correct label span{
+  color: green;
+  font-weight: bold;
+}
+
+.radio.incorrect label span{
+  color: red;
+}
+
+#answers{
+  display:none;
+}
+
+#answers .panel-body span{
+  font-weight: bold;
+}
+
+#timer{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.panel-info .panel-heading{
+  min-height:25px;
+}
+
+.fixing{
+  right: 10px;
+  position:fixed;
+  top: 10px;
+}

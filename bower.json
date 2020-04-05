@@ -1,0 +1,11 @@
+{
+  "name": "survey",
+  "authors": [
+    "DejanN <nichsici.dejan@gmail.com>"
+  ],
+  "description": "survey that survays",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://marinari-fluviali.uv.ro/",
+  "private": true
+}

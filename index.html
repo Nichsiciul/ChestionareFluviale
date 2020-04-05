@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chestionar</title>
+    <meta name="description" content="chestionar">
+    <meta name="author" content="Dejan">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="container-fluid text-center">
+      <h1>Chestionar</h1>
+    </header>
+    <div class="container">
+      <div class="panel panel-info">
+        <div class="panel-heading text-right">
+          <div id="timer"></div>
+        </div>
+        <div id="questions" class="panel-body">
+
+        </div>
+        <div class="panel-footer">
+          <button id="verify" class="btn btn-primary">Verifica</button>
+        </div>
+      </div>
+      <div id="answers" class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Rezultate</h3>
+        </div>
+        <div class="panel-body">
+          <p>Total Intrebari: <span id="total"></span></p>
+          <p>Raspunsuri corecte: <span id="right"></span></p>
+          <p>Raspunsuri gresite: <span id="wrong"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer container-fluid text-right">
+          <span>Made with ❤ for Galati =) </span>
+    </footer>
+
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/jquery.countdown.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="scripts/database.js"></script>
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+  </body>
+</html>
