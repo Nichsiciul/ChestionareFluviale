@@ -1,7 +1,9 @@
 const csv = require("fast-csv");
 const fs = require('fs');
-
 const sms = [];
+const questionsPerPage = 30;
+
+let failedQuestionsCount = 0;
 let fileName = "CAPITAN A TCN.VITALITATE";
 
 fileName = process.argv[2] || fileName;
@@ -25,23 +27,35 @@ csv
 
     const correct = answerKeys.indexOf("1");
 
-    sms.push({
-      question,
-      answers,
-      correct,
-      image
-    });
-
-
+    if(question) {
+      sms.push({
+        question,
+        answers,
+        correct,
+        image
+      });
+    } else {
+      failedQuestionsCount++;
+    }
   })
   .on("end", function () {
     var final = {
       questions: sms,
-      questionsPerPage: sms.length < 30 ? sms.length : 30
+      questionsPerPage: sms.length < questionsPerPage ? sms.length : questionsPerPage
     }
     var json = JSON.stringify(final);
     var script = `const database = ${json};`
+
+    if(failedQuestionsCount) {
+      console.log("Failed question conversion: ", failedQuestionsCount);
+      console.log("Something wrong with CSV");
+    }
+
     fs.writeFile(`generated/${fileName}.js`, script, (error) => {
-      console.log(error);
+      if(error == null) {
+        console.log("File created!");
+      } else{
+        console.log(error);
+      }
     });
   });
